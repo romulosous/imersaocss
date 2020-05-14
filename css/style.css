@@ -1,0 +1,164 @@
+
+/* reset do css */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*  === seletores mais genéricos === */
+body{
+    font-size: 12px;
+    color: whitesmoke;
+    background-color: #282A36;
+    font-family: 'Source Code Pro', monospace;
+    height: 100vh;
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+header img{
+  height: 110px;
+
+}
+
+a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #50fa7b;
+  text-decoration: underline;
+}
+
+
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 400px){
+  body{
+    font-size: 14px;
+  }
+
+}
+/* breakpoint */
+@media (min-width: 600px){
+  body{
+    font-size: 18px;
+  }
+
+}
+
+/* breakpoint */
+@media (min-width: 1200px){
+  body{
+    font-size: 20px;
+    /* background-color: deeppink; */
+  }
+
+}
+
+.menu{
+  background-color: #1c2035;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+}
+
+.menu ul{
+  display: flex;
+  justify-content: space-between;
+}
+.menu li{
+  list-style: none;
+  margin: auto;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 20px;
+}
+
+.site-title{
+  font-size: 4em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.site-subtitle {
+  font-style: italic;
+  font-size: 2em;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.8em;
+
+}
+
+/* === Portfolio === */
+.portfolio{
+  padding: 2em;
+  height: 100vh;
+
+}
+
+.portfolio h2{
+  color: whitesmoke;
+  font-family: 'Source Code Pro', monospace;
+  margin-bottom: 1.5em;
+  font-size: 3em;
+  text-align: center;
+}
+
+.portfolio .grid{
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width: 560px){
+  .portfolio .grid{
+    grid-template-columns: 240px 240px;
+  }
+}
+
+@media (min-width: 880px){
+  .portfolio .grid{
+    grid-template-columns: repeat(3, 260px);
+    justify-content: center;
+  }
+}
+
+
+@media (min-width: 880px){
+  .portfolio .grid{
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 8em - 48px);
+
+  }
+}
+
+.portfolio figure{
+  text-align: center;
+}
+
+.img-portfolio{
+  height: 180px;
+  width: 240px;
+  object-fit: cover;
+  object-position: left bottom;
+}
+
+@media (min-width: 1200px){
+  .portfolio .grid{
+    height: auto;
+    width: 100%;
+  }
+}
+
+
+
+  
