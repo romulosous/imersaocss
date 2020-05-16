@@ -29,14 +29,14 @@ header img{
 }
 
 a{
-  color: whitesmoke;
+  color: white;
   text-decoration: none;
 }
 
 a:hover{
   color: #50fa7b;
-  text-decoration: underline;
 }
+
 
 
 /* se a tela tiver pelo menos 400px vai carregar estes estilos */
@@ -45,12 +45,31 @@ a:hover{
     font-size: 14px;
   }
 
+  .menu{
+    padding: 50px;
+
+    
+  }
+
+  .menu ul{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menu a {
+    font-size: 1em;
+    display: block;
+    padding: 10px 20px;
+  }
+
 }
+
 /* breakpoint */
 @media (min-width: 600px){
   body{
     font-size: 18px;
   }
+
 
 }
 
@@ -64,24 +83,53 @@ a:hover{
 }
 
 .menu{
+  padding: 0;
+  border-bottom: 2px solid #333333;
   background-color: #1c2035;
   position: fixed;
   width: 100vw;
   top: 0;
+  z-index: 1;
 }
 
-.menu ul{
-  display: flex;
-  justify-content: space-between;
-}
+
+
 .menu li{
   list-style: none;
   margin: auto;
 }
 
 .menu a {
+  font-size: 1.5em;
   display: block;
   padding: 10px 20px;
+}
+
+.menu a:hover{
+  transition: color .5s;
+}
+
+.menu a:active{
+  color: red;
+}
+
+.titulo{
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+
+  animation: 1s linear 2s animacaoTitulo forwards; 
+}
+
+@keyframes animacaoTitulo{
+  0% {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
 }
 
 .site-title{
@@ -97,13 +145,28 @@ a:hover{
 
 }
 
-/* === Portfolio === */
+
+
+.sobre,
+.contato,
 .portfolio{
   padding: 2em;
-  height: 100vh;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
+@media (min-width: 1200px){
+  .container{
+    margin-left: auto;
+    margin-right: auto; 
+    max-width: 1200px;
+  }
+}
+
+.sobre h2,
+.contato h2,
 .portfolio h2{
   color: whitesmoke;
   font-family: 'Source Code Pro', monospace;
@@ -112,10 +175,51 @@ a:hover{
   text-align: center;
 }
 
+.sobre .avatar{
+  text-align: center;
+}
+
+.sobre .avatar img{
+  border-radius: 50%;
+  
+}
+
+
+.sobre a{
+  text-decoration: underline;
+}
+
+.sobre  p{
+  padding-right: 4em;
+  padding-left: 4em;
+}
+
+.sobre p{
+  color: white;
+  text-indent: 1.4em;
+  margin-bottom: 1.4em;
+  text-align: justify;
+}
+
+@media (min-width: 600px){
+
+  .sobre .avatar img{
+    border-radius: 0%;
+  }
+  .sobre .avatar{
+    float: right;
+    margin-left: 2em;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    
+  }
+}
+
 .portfolio .grid{
   display: grid;
   gap: 2em;
+  justify-content: center;
 }
+
 
 @media (min-width: 560px){
   .portfolio .grid{
@@ -147,16 +251,71 @@ a:hover{
 
 .img-portfolio{
   height: 180px;
-  width: 240px;
+  width: 100%;
   object-fit: cover;
   object-position: left bottom;
+  transition: transform 500ms;
+
 }
+
+/* .img-portfolio:hover{
+  transform: scale(1.2);
+} */
+
+.flip-card{
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 3s;
+
+}
+
+.flip-card:hover .card{
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back{
+  backface-visibility: hidden;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.card-back {
+  height: 180px;
+  color: black;
+  background-color: white;
+  transform: rotateY(180deg);
+
+}
+
+
+
+
 
 @media (min-width: 1200px){
   .portfolio .grid{
     height: auto;
     width: 100%;
   }
+}
+
+/* === Contato === */
+.contato .icons{
+  text-align: center;
+}
+
+.contato a{
+  font-size: 2em;
+}
+
+.contato a:hover{
+  color: white;
+  text-shadow: 0px 0px 10px rgba(80, 250, 123, .5);
+
 }
 
 
